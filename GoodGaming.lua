@@ -54,7 +54,7 @@ function warnmessage(title, text, timee)
 	)
 end
 
-local currentver = "1.3.3"
+local currentver = "1"
 local gui_data = nil
 
 
@@ -1274,8 +1274,14 @@ end
 window_entities:AddToggle({
 	Name = "Avoid Rush & Ambush",
 	Value = false,
-	Callback = function(val, oldval)
-		flags.avoidrushambush = val
+	Callback = function(GM)
+		if GM then
+ local Collison = game.Players.LocalPlayer.Character:FindFirstChild("Collision")
+Collison.Position = Collison.Position - Vector3.new(0,7.5,0)
+else
+local Collison = game.Players.LocalPlayer.Character:FindFirstChild("Collision")
+Collison.Position = Collison.Position - Vector3.new(0,-7.5,0)
+			end
 	end
 })
 workspace.ChildAdded:Connect(function(inst)
