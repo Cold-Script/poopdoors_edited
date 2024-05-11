@@ -56,30 +56,10 @@ end
 
 local currentver = "1.3.3"
 local gui_data = nil
-local s,e = pcall(function()
-	gui_data = game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/gui_data.json"), true)
-	gui_data = game:GetService("HttpService"):JSONDecode(gui_data)
-end)
-if e then
-	warnmessage("POOPDOORS EDITED v"..currentver, "Failed to get script data.", 10)
-end
+
 
 if POOPDOORSLOADED == true then warnmessage("POOPDOORS EDITED v"..currentver, "GUI already loaded!", 10) return end
-if game.PlaceId ~= 6839171747 and game.PlaceId == 6516141723 then 
-	--warnmessage("POOPDOORS EDITED v"..currentver, "You need to join a game to run this script.", 10) 
-	confirmnotification("POOPDOORS EDITED v"..currentver, "Do you want to join a game?", 15, function(state)
-		if state == true then
-			task.spawn(function()
-				loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/joinsolo.lua"), true))()
-			end)
-		end
-	end)
-	return
-end
-if game.PlaceId ~= 6839171747 and game.PlaceId ~= 6516141723 then 
-	warnmessage("POOPDOORS EDITED v"..currentver, "You need to join DOORS to run this script.", 10) 
-	return
-end
+
 if gui_data ~= nil then
 	if currentver ~= gui_data.ver or gui_data.ver ~= currentver then
 		warnmessage("POOPDOORS EDITED v"..currentver, "You are using an outdated version of this script. Loading latest version.", 10) 
