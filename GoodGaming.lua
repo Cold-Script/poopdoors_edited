@@ -485,9 +485,9 @@ end
 local walkspeedtoggle = false
 local walkspeedslider = window_player:AddSlider({
 	Name = "Walkspeed",
-	Value = 16,
+	Value = 21,
 	Min = 16,
-	Max = 22,
+	Max = 21,
 
 	Callback = function(val, oldval)
 		flags.speed = val
@@ -502,7 +502,7 @@ window_player:AddToggle({
 	Callback = function(val, oldval)
 		walkspeedtoggle = val
 		if not val then
-			hum.WalkSpeed = 16
+			hum.WalkSpeed = 21
 		end
 	end
 })
@@ -1242,7 +1242,7 @@ workspace.CurrentCamera.ChildAdded:Connect(function(child)
 	end
 end)
 
-if game.ReplicatedStorage:WaitForChild("GameData"):WaitForChild("Floor").Value == "Retro" then
+
 	local Toggle = window_entities:AddToggle(
 	Name = "Anti Lava",
 	Value = false,
@@ -1324,7 +1324,7 @@ local Toggle = window_entities:AddToggle(
 		end
 		end)
 end
-elseif game.ReplicatedStorage:WaitForChild("GameData"):WaitForChild("Floor").Value == "Fools" then
+
 	game:GetService("Workspace").DescendantAdded:Connect(function(v186)if  not _G.antibanananana then return;end if v186.IsA(v186,"Part") then if _G.antibanananana then if (v186.Name=="BananaPeel") then v186.CanTouch=false;end end end end);window_entities:AddToggle(Name="Anti-Banana",Value=false,Callback=function(v187)local v188=0;while true do if (v188==(0 + 0)) then _G.antibanananana=v187;if (_G.antibanananana==true) then for v600,v601 in pairs(game:GetService("Workspace"):GetDescendants()) do if v601:IsA("Part") then if (v601.Name=="BananaPeel") then v601.CanTouch=false;end end end end break;end end end);
 game:GetService("RunService").RenderStepped:Connect(function()pcall(function()if _G.antije then for v413,v414 in pairs(game.workspace:GetChildren()) do if (v414.Name=="JeffTheKiller") then v414.Knife.CanTouch=false;end end for v415,v416 in pairs(game.workspace:GetChildren()) do if (v416.Name=="JeffTheKiller") then v416.Head.CanTouch=false;end end for v417,v418 in pairs(game.workspace:GetChildren()) do if (v418.Name=="JeffTheKiller") then v418.HumanoidRootPart.CanTouch=false;end end for v419,v420 in pairs(game.workspace:GetChildren()) do if (v420.Name=="JeffTheKiller") then v420["Left Arm"].CanTouch=false;end end for v421,v422 in pairs(game.workspace:GetChildren()) do if (v422.Name=="JeffTheKiller") then v422["Left Leg"].CanTouch=false;end end for v423,v424 in pairs(game.workspace:GetChildren()) do if (v424.Name=="JeffTheKiller") then v424["Right Arm"].CanTouch=false;end end for v425,v426 in pairs(game.workspace:GetChildren()) do if (v426.Name=="JeffTheKiller") then v426["Right Leg"].CanTouch=false;end end for v427,v428 in pairs(game.workspace:GetChildren()) do if (v428.Name=="JeffTheKiller") then v428.Torso.CanTouch=false;end end end end);end);window_entities:AddToggle(Name="Anti-Jeff The Killer",Value=false,Callback=function(v189)_G.antije=v189;end);
 if hookmetamethod and newcclosure and getnamecallmethod then
